@@ -1,24 +1,24 @@
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
-#include <stdlib.h>
 
-int main()
-{
-	int iOp1, iOp2, iSoma, iSub;
-    float fOp1, fOp2, fSoma, fSub;
-    
-    scanf("%d %d", &iOp1, &iOp2);
-    scanf("%f %f", &fOp1, &fOp2);
-    iSoma = iOp1 + iOp2;
-    iSub = iOp1 - iOp2;
-    fSoma = fOp1 + fOp2;
-    fSub = fOp1 - fOp2;
-    
-    printf("%d %d\n", iSoma, iSub);
-    printf("%.1f %.1f\n", fSoma, fSub);
 
+int main(){
+    char nome[100] = "Raphael";
+    int idade;
+
+    scanf("%s %d", &nome, &idade);
+    printf("Salve! %s %s com idade = %d anos \n", "Olá Mundo!", nome, idade);
+    if (idade < 0 || idade > 150)
+        printf("idade inválida \n");
+    else if(idade >= 18)
+        printf("%s É maior de idade \n ", nome);    
+    else
+        printf("%s É menor de idade \n ", nome);
     
+    for(int i = 0; i < strlen(nome); i++){
+        printf("%c \n", nome[i]);   
+    }
+        
     return 0;
 }
 
