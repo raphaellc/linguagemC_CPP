@@ -2,10 +2,16 @@
 #include <ctype.h>
 #include <string.h>
 
+//protótipo da função
+//[tipo de retorno] [identificador]([parâmetros]){código da função return [valor]}
+//void - sem retorno - não tipo
+int verificar_forca_senha(char *senha);
+
 // Função para verificar a força da senha
 int verificar_forca_senha(char *senha) {
     int comprimento = strlen(senha);
     int tem_maiuscula = 0, tem_minuscula = 0, tem_numero = 0, tem_especial = 0;
+    int forca = 0;
     int i;
 
     // Verifica o comprimento
@@ -22,10 +28,10 @@ int verificar_forca_senha(char *senha) {
         } else if (isdigit(senha[i])) {
             tem_numero = 1;
         } else if (ispunct(senha[i])) {
-            tem_especial = 1;
+            tem_especial = 1;    
         }
     }
-
+    
     // Determina a força da senha
     if (tem_maiuscula && tem_minuscula && tem_numero && tem_especial) {
         return 4; // Forte
@@ -36,11 +42,14 @@ int verificar_forca_senha(char *senha) {
     }
 }
 
+
 int main() {
     char senha[100];
-
+    
+    
     printf("Digite a senha: ");
     scanf(" %[^\n]", senha);
+    
 
     int forca = verificar_forca_senha(senha);
 
